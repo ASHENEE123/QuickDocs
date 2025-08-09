@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuickDocs Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #007BFF;
+      color: white;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    td:last-child {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Status colors */
+    .status-completed {
+      color: white;
+      background-color: green;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .status-in-progress {
+      color: black;
+      background-color: yellow;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .status-not-started {
+      color: white;
+      background-color: red;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Process Dashboard</h1>
+
+  <table>
+    <tr>
+      <th>Customer</th>
+      <th>Process</th>
+      <th>Status</th>
+      <th>Completion %</th>
+    </tr>
+
+    {% for row in dashboard_data %}
+    <tr>
+      <td>{{ row['customer_name'] }}</td>
+      <td>{{ row['process_name'] }}</td>
+      <td>
+        {% if row['status']|lower == 'completed' %}
+          <span class="status-completed">{{ row['status'] }}</span>
+        {% elif row['status']|lower == 'in-progress' %}
+          <span class="status-in-progress">{{ row['status'] }}</span>
+        {% else %}
+          <span class="status-not-started">{{ row['status'] }}</span>
+        {% endif %}
+      </td>
+      <td>{{ row['completion_percentage'] }}%</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

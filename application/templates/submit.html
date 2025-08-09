@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    pre {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid #4CAF50;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-width: 600px;
+    }
+
+    hr {
+      margin: 30px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Document Submission</h1>
+
+  <form method="POST">
+    <label>Customer:</label>
+    <select name="customer_id" required>
+      {% for customer in customers %}
+        <option value="{{ customer['id'] }}">{{ customer['name'] }}</option>
+      {% endfor %}
+    </select>
+
+    <label>Process:</label>
+    <select name="process_id" required>
+      {% for process in processes %}
+        <option value="{{ process['id'] }}">{{ process['name'] }}</option>
+      {% endfor %}
+    </select>
+
+    <label>Document Type:</label>
+    <select name="document_type_id" required>
+      {% for doc in doc_types %}
+        <option value="{{ doc['id'] }}">{{ doc['name'] }}</option>
+      {% endfor %}
+    </select>
+
+    <label>File URL:</label>
+    <input type="text" name="file_url" required>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if ocr_output %}
+  <h3> OCR Extracted Data:</h3>
+  <pre>{{ ocr_output }}</pre>
+  {% endif %}
+
+  <hr>
+
+  {% if show_data == 1 %}
+  <h2> Submitted Documents</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Upload Date</th>
+        <th>Customer</th>
+        <th>Process</th>
+        <th>Document Type</th>
+        <th>File URL</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sub in submissions %}
+      <tr>
+        <td>{{ sub['upload_date'] }}</td>
+        <td>{{ sub['customer_name'] }}</td>
+        <td>{{ sub['process_name'] }}</td>
+        <td>{{ sub['document_type'] }}</td>
+        <td><a href="{{ sub['file_url'] }}" target="_blank">View</a></td>
+        <td>{{ sub['validation_status'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</body>
+</html>
