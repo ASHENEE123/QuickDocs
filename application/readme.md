@@ -1,5 +1,5 @@
 
-Got it! Here’s a README.md tailored exactly to your folder structure and files, organized clearly and human-friendly:
+
 
 ---
 
@@ -14,7 +14,23 @@ This project enables users to input natural language queries (like “Show all c
 
 ```
 
+application/
+├── app.py # Flask backend server code
+├── requirements.txt # Python dependencies
+├── templates/ # Frontend HTML templates
+├── screenshots/ # Screenshots of app usage
 
+├── database/
+│ ├── sampledata.sql # Sample data insertions
+│ ├── schema.sql # Database schema creation
+│ └── quick.py # Script to create and initialize database
+
+
+├── nl_query/
+│ ├── nl_query.txt # Sample natural language queries
+│ ├── docs/ # Project documentation folder
+│ │ ├── screenshots/ # Documentation screenshots
+│ │ └── dummy_ocr/ # Additional resource folder   
 ````
 
 ---
@@ -24,7 +40,7 @@ This project enables users to input natural language queries (like “Show all c
 1. **Clone the repository and navigate into the application folder:**
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone[https://github.com/ASHENEE123/Assignment.git]
    cd your-repo-name/application
 ````
 
@@ -47,6 +63,7 @@ This project enables users to input natural language queries (like “Show all c
 3. **Install required Python packages:**
 
    ```bash
+   present in 
    pip install -r requirements.txt
    ```
 
@@ -57,6 +74,7 @@ This project enables users to input natural language queries (like “Show all c
    ```bash
    python quick.py
    ```
+   define proper path  for sample.sql and schema.sql
 
    This will create the database schema and insert sample data.
 
@@ -84,7 +102,7 @@ This project enables users to input natural language queries (like “Show all c
 
 2. Run the Flask backend:
 
-   ```bash
+   cd your_folder/application
    python app.py
    ```
 
@@ -92,17 +110,14 @@ This project enables users to input natural language queries (like “Show all c
 
    ```
    http://127.0.0.1:5000
-   ```
+   visit various routes like register,submit,dashboard and see results of nlp on nl-query-ui
 
 4. Use the web interface to enter natural language queries and view database results.
-
 ---
 
 ## API Keys Needed
 
 * This project uses the **Google Generative AI API** to convert natural language queries into SQL.
-* Obtain your API key from Google Cloud Console.
-* **Do not commit your API keys to the repository.** Use environment variables or secure configuration.
 
 ---
 
@@ -121,21 +136,5 @@ This project enables users to input natural language queries (like “Show all c
 
 * Only **SELECT** SQL queries are allowed for security and safety.
 * Refer to `nl_query/docs` for detailed documentation and additional resources.
-* Screenshots demonstrating app usage are located in the `screenshots` folder.
+* Screenshots demonstrating app usage are located in the `screenshots` folders
 
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-*Thank you for exploring this project! Feel free to raise issues or contribute.*
-
-```
-
----
-
-Would you like me to help you prepare the documentation file inside `nl_query/docs` or add example screenshots with markdown for your README?
-```
