@@ -27,7 +27,7 @@ CREATE TABLE process_assignments (
     customer_id INTEGER,
     process_id INTEGER,
     assignment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status TEXT CHECK(status IN ('pending', 'completed')) DEFAULT 'pending',
+    status TEXT CHECK(status IN ('pending', 'completed','rejected')) DEFAULT 'pending',
     completion_percentage INTEGER CHECK(completion_percentage BETWEEN 0 AND 100),
     FOREIGN KEY (customer_id) REFERENCES customers(id),
     FOREIGN KEY (process_id) REFERENCES processes(id)
