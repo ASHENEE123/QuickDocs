@@ -137,7 +137,7 @@ DB_PATH = "../database/quickdocs.db"
 SCHEMA_PATH = "../database/schema.sql"
 
 
-genai.configure(api_key="AIzaSyCwEtH3a417Twls22umX4SXTQt_-5_NHRk")
+genai.configure(api_key="Enter API KEY")
 
 
 
