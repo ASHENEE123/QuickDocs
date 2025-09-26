@@ -131,6 +131,15 @@ application/
 * HTML, CSS, JavaScript (frontend interface)
 
 ---
+##SCREENSHOTS
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/application/screenshots/Screenshot%202025-08-09%20203950.png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/application/screenshots/Screenshot%202025-08-09%20204007.png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/application/screenshots/Screenshot%202025-08-09%20204048.png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/application/screenshots/Screenshot%202025-08-09%20204118.png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/application/screenshots/Screenshot%202025-08-09%20204211.png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/nl_query/docs/screenshots/success.png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/nl_query/docs/screenshots/success%20(2).png)
+![imagealt](https://github.com/ASHENEE123/QuickDocs/blob/58d2d587cfc377e77f10272e3257bb074fce24eb/nl_query/docs/screenshots/error.png)
 
 ## Additional Notes
 
